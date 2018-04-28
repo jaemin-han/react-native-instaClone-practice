@@ -8,6 +8,24 @@ class InstaClone extends Component {
                 <View style={styles.tempNav}>
                     <Text>Instagramini</Text>
                 </View>
+                <View style={styles.userBar}>
+                    <View style={{ flexDirection: "row" }}>
+                        <Image 
+                            style={{width: 40, height: 40 }}
+                            source={{
+                                uri:
+                                    "https://lh3.googleusercontent.com/jGip3ceNulaMJu0b2TT6IQwYCKNQIcSOCtptpVsYnsssFtfPF0AVGRlIXfpF6JVyOIwwjzaSSAhH11oJQAJOKEt5Lw"
+                            }}
+                        />
+                        <Text>Jaemin Han</Text>
+                    
+                    </View>
+                    <View />
+                </View>
+
+
+          
+                
                 
                
  
@@ -31,6 +49,13 @@ const styles= StyleSheet.create({
         borderBottomWidth: StyleSheet.hairlineWidth,
         justifyContent: 'center',
         alignItems: "center"
+    },
+
+    userBar: {
+        width: 100 + "%",
+        height: 50,
+        backgroundColor: "rgb(255, 255, 255)",
+        flexDirection: "row"
     }
 
 })
