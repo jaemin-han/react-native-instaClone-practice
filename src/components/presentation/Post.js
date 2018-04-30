@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity } from 'react-native';
-import config from "./config";
+import config from "../../config";
 
 class Post extends Component {
     constructor(){
@@ -27,7 +27,7 @@ class Post extends Component {
         const heartIconColor = (this.state.liked) ? "rgb(252,61,57)" : null;
 
         return(
-            <View>
+            <View style={{ flex: 1, width: 100 + "%" }}>
 
                 <View style={styles.userBar}>
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
