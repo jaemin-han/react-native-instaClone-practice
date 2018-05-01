@@ -1,41 +1,24 @@
 import React, { Component } from 'react';
-import { 
-    View,
-    Text,
-    StyleSheet,
-    Image,
-    Dimensions,
-    TouchableOpacity
-} from 'react-native';
-import config from "./config";
-import { PostFeed } from './components/container';
+import { View, StyleSheet } from 'react-native';
+import { MainFeed, Login, Camera, Profile } from './components/screens';
+import { SwitchNavigator, TabNavigator } from 'react-navigation';
+
+
+const Tabs = TabNavigator({
+    feed: MainFeed,
+    camera: Camera,
+    profile: Profile
+});
+
+const MainStack = SwitchNavigator({
+    login: Login,
+    main: Tabs
+});
 
 class InstaClone extends Component {
-
-    render(){
-
-        return(
-            <View style={{ flex: 1, width: 100 + '%', height: 100 + '%'}}>
-                <View style={styles.tempNav}>
-                    <Text>Instagramini</Text>
-                </View>
-                <PostFeed/>
-            </View>
-        )
+    render() {
+        return <MainStack />;
     }
 }
-
-const styles= StyleSheet.create({
-    tempNav: {
-        width: 100 + '%',
-        height: 65,
-        marginTop: 30,
-        backgroundColor:'rgb(250, 250, 250)',
-        borderBottomColor: 'rgb(233, 233, 233)',
-        borderBottomWidth: StyleSheet.hairlineWidth,
-        justifyContent: 'center',
-        alignItems: "center"
-    }
-});
 
 export default InstaClone;
