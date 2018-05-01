@@ -1,28 +1,52 @@
 import React, { Component } from "react";
 import { View, Text, TouchableOpacity, TextInput, Button, StyleSheet } from "react-native";
+import config from "../../config";
+
 
 class Register extends Component {
     
     constructor() {
-        super()
+        super();
         this.state = {
             credentials: {
-                login: "",
+                email: "",
                 password: ""
             }
         }
     };
 
-    // updateText() {
-
-    // }
+    updateText(text, field) {
+        let newCredentials = Object.assign(this.state.credentials);
+        newCredentials[field] = text;
+        this.setState({
+            credentials: newCredentials
+        });
+    }
 
     register() {
         //send credential to server
         //if signup success
-        this.props.navigation.navigate('main');
-
-        //else error message
+        // alerting login and password
+        fetch(config.baseUrl + 'signup', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.state.credentials)
+        })
+        .then((response) => response.json())
+        .then(jsonResponse => {
+            if(jsonResponse.confirmation==="success"){
+                this.props.navigation.navigate('main');
+            } else {
+                throw new Error({ message: 'sorry, something went wrong' });
+            }
+        })
+        .catch(err => {
+            console.log(err.message);
+        }); 
+        // alert(JSON.stringify(this.state.credentials));
     }
 
     render() {
@@ -39,10 +63,16 @@ class Register extends Component {
             >
                 <Text>Register Page</Text>
                 <TextInput 
+                    value={this.state.login}
+                    autoCorrect={false}
+                    onChangeText={text => this.updateText(text, 'email')} 
                     placeholder="Username" 
                     style={styles.input} 
                 />
-                <TextInput 
+                <TextInput
+                    value={this.state.password}
+                    autoCorrect={false}
+                    onChangeText={text => this.updateText(text, 'password')} 
                     secureTextEntry
                     placeholder="Password" 
                     style={styles.input} 
