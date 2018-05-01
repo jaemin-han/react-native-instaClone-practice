@@ -19,7 +19,10 @@ class Post extends Component {
 
     render(){
         const imageHeight = Math.floor(this.state.screenWidth * 1.1)
-        const imageUri = "https://lh3.googleusercontent.com/mUJK_0Vvc20XsMsZEPTjWZkR24EDls8ViSy3ITn6laO5O2U4efG7EYcHoHd9jb1lV0i_NFZF5AkCHFjt5PFkOWSVmBU" + "=s" + imageHeight + "-c";
+        const imageSelection = this.props.item % 2==0
+            ? "https://lh3.googleusercontent.com/z1ULicLHAgLA_hr_crQR8SlcdX8Ldn5Qi1mreNmg_UKc2aYjE3dyiPWbrxWBwZWMil549q_XZorT54aqXh_ZScfJmw" 
+            : "https://lh3.googleusercontent.com/mUJK_0Vvc20XsMsZEPTjWZkR24EDls8ViSy3ITn6laO5O2U4efG7EYcHoHd9jb1lV0i_NFZF5AkCHFjt5PFkOWSVmBU"
+        const imageUri = imageSelection + "=s" + imageHeight + "-c";
         // alert(imageHeight)
 
         // changing red color
