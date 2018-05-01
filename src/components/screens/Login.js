@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, TextInput, Button } from "react-native";
 
 class Login extends Component {
     
     login() {
         // alert("pressed");
         //Navigate to Main Page
-        this.props.navigation.navigate('main');
+        this.props.navigation.navigate('register');
     }
 
     render() {
@@ -23,7 +23,7 @@ class Login extends Component {
                     this.login();
                 }}
             >
-                <Text>Profile Page</Text>
+                <Text>New User?</Text>
             </TouchableOpacity>
         );
     }

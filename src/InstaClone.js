@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { MainFeed, Login, Camera, Profile } from './components/screens';
-import { SwitchNavigator, TabNavigator } from 'react-navigation';
+import { MainFeed, Login, Register, Camera, Profile } from './components/screens';
+import { SwitchNavigator, TabNavigator, StackNavigator } from 'react-navigation';
 
 
 const Tabs = TabNavigator({
@@ -10,8 +10,13 @@ const Tabs = TabNavigator({
     profile: Profile
 });
 
+const IntroStack = StackNavigator ({
+    register: Register,
+    login: Login
+})
+
 const MainStack = SwitchNavigator({
-    login: Login,
+    intro: IntroStack,
     main: Tabs
 });
 
