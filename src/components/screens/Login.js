@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, TouchableOpacity, TextInput, Button, StyleSheet } from "react-native";
+import config from '../../config'
 
 class Login extends Component {
     

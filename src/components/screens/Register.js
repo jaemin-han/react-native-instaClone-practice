@@ -4,7 +4,6 @@ import config from "../../config";
 
 
 class Register extends Component {
-    
     constructor() {
         super();
         this.state = {
@@ -61,28 +60,28 @@ class Register extends Component {
                     backgroundColor: "tomato"
                 }}
             >
-                <Text>Register Page</Text>
-                <TextInput 
-                    value={this.state.login}
-                    autoCorrect={false}
-                    onChangeText={text => this.updateText(text, 'email')} 
-                    placeholder="Username" 
-                    style={styles.input} 
-                />
-                <TextInput
-                    value={this.state.password}
-                    autoCorrect={false}
-                    onChangeText={text => this.updateText(text, 'password')} 
-                    secureTextEntry
-                    placeholder="Password" 
-                    style={styles.input} 
-                />
-                <Button 
-                    onPress={() => {
-                        this.register();
-                    }}
-                    title="SignUp"
-                />
+            <Text>Register Page</Text>
+            <TextInput 
+                value={this.state.login}
+                autoCorrect={false}
+                onChangeText={text => this.updateText(text, 'email')} 
+                placeholder="Username" 
+                style={styles.input} 
+            />
+            <TextInput
+                value={this.state.password}
+                autoCorrect={false}
+                onChangeText={text => this.updateText(text, 'password')} 
+                secureTextEntry
+                placeholder="Password" 
+                style={styles.input} 
+            />
+            <Button 
+                onPress={() => {
+                    this.register();
+                }}
+                title="SignUp"
+            />
             </View>
         );
     }
