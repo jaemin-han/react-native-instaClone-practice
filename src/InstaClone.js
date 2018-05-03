@@ -28,3 +28,7 @@ class InstaClone extends Component {
 }
 
 export default InstaClone;
+
+// Separate Backend API
+// Post User Data useing Turbo360
+// Resolve Error Issue - Registration
