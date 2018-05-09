@@ -24,9 +24,10 @@ class Register extends Component {
 
     register() {
         //send credential to server
+        // alert(JSON.stringify(this.state.credentials));
         //if signup success
         // alerting login and password
-        fetch(config.baseUrl + 'signup', {
+        return fetch(config.baseUrl + 'signup', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

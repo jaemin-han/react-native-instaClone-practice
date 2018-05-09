@@ -17,7 +17,7 @@ const IntroStack = StackNavigator ({
 })
 
 const MainStack = SwitchNavigator({
-    intro: IntroStack,
+    // intro: IntroStack,
     main: Tabs
 });
 
